@@ -3,6 +3,8 @@ https://github.com/javahometech/pets-app
 
 # Configure on pom.xml file
 
+...
+
 <distributionManagement>
 		 <snapshotRepository>
 		    <id>nexusRepo</id>
@@ -14,4 +16,6 @@ https://github.com/javahometech/pets-app
 		    <url>http://13.233.230.166:8081/repository/maven-releases/</url>
 		</repository>
   	</distributionManagement>
+	
+...	
   	
