@@ -1,6 +1,7 @@
 # pets-app
+````
 https://github.com/javahometech/pets-app
-
+```
 # Configure on pom.xml file
 
 ```
