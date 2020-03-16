@@ -3,7 +3,7 @@ https://github.com/javahometech/pets-app
 
 # Configure on pom.xml file
 
-'''
+```
 
 <distributionManagement>
 		 <snapshotRepository>
@@ -17,5 +17,5 @@ https://github.com/javahometech/pets-app
 		</repository>
   	</distributionManagement>
 	
-'''
+```
   	
