@@ -1,6 +1,6 @@
 # pets-app
 ````
-['repository']https://github.com/javahometech/pets-app
+[repository](https://github.com/javahometech/pets-app)
 ````
 
 # Configure on POM.xml file
