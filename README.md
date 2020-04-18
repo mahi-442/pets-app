@@ -1,7 +1,5 @@
 # pets-app
-````
-.['Repository'].(https://github.com/javahometech/pets-app)
-````
+[Hari-Sir-Repository](https://github.com/javahometech/pets-app)
 
 # Configure on POM.xml file
 ```
