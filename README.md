@@ -38,4 +38,30 @@
         }
       }
 ```
+# Sample Docker image
+```
+FROM alpine:3.8.5
+
+LABEL NAME="mahi"
+LABEL EMAIL="9618714521m@gmail.com"
+LABEL TIER="FRONT"
+ARG JAVA_VERSION=openjdk8-jre
+#Install Java
+RUN apk add $JAVA_VERSION
+
+#Create work dir to store our code
+WORKDIR /app/javahome
+
+#Copy our code to image
+COPY Welcome.class .
+COPY startup.sh .
+#Set ENVIRONMENT Variable for demo
+ENV NAME="Mahesh"
+
+#Run application when container start
+ENTRYPOINT ["ping"]
+
+CMD ["google.com"]
+
+```
   	
