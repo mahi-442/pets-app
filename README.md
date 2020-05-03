@@ -38,7 +38,7 @@
         }
       }
 ```
-# Sample Docker image
+# Sample Docker image1
 ```
 FROM alpine:3.8.5
 
@@ -63,5 +63,9 @@ ENTRYPOINT ["ping"]
 
 CMD ["google.com"]
 
+```
+# Sample Docker image2
+
+```
 ```
   	
