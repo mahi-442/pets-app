@@ -1,4 +1,4 @@
-#Gooogle docs link
+# Gooogle docs link
 
 [Google docs running notes](https://docs.google.com/document/d/12pLDe3ONtasPd5FL_RJQZAMqDFDVUUVZBtPOdh6D3I0/edit)
 
@@ -67,5 +67,23 @@ CMD ["google.com"]
 # Sample Docker image2
 
 ```
+FROM alpine:3.8.5
+
+LABEL NAME="mahi"
+LABEL EMAIL="9618714521m@gmail.com"
+LABEL TIER="FRONT"
+ARG JAVA_VERSION=openjdk8-jre
+#Install Java
+RUN apk add $JAVA_VERSION
+
+#Create work dir to store our code
+WORKDIR /app/javahome
+
+#Copy our code to image
+COPY * ./
+ENV APP_ENV=dev
+
+CMD echo "Using $APP_ENV properties"
+
 ```
   	
