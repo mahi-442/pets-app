@@ -86,4 +86,21 @@ ENV APP_ENV=dev
 CMD echo "Using $APP_ENV properties"
 
 ```
-  	
+# Docker image to set up a small webserver on apache
+```
+FROM ubuntu:16.04
+
+LABEL NAME="mahi"
+LABEL EMAIL="9618714521m@gmail.com"
+LABEL TIER="FRONT"
+
+RUN apt update
+RUN apt install apache2 -y
+
+COPY index.html /var/www/html/
+
+EXPOSE 80
+
+CMD apachectl -D FOREGROUND
+
+```
