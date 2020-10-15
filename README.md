@@ -118,5 +118,34 @@ CMD apachectl -D FOREGROUND
 ...
 
 ```
+# Ansible-playbook to run two tasks in the same playbook(it's not a good practice in realtime)
+```
+---
+- hosts: 172.31.33.3
+  become: True
+  tasks:
+          - name: Install git
+            yum:
+                    name: git
+                    state: present
+
+- hosts: 172.31.33.3
+  become: True
+  tasks:
+          - name: Install Docker
+            yum:
+                    name: docker
+                    state: present
+          - name: Start docker daemon
+            service:
+                    name: docker
+                    state: started
+                    enabled: yes
+
+
+
+...
+
+```
 
 
