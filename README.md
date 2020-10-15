@@ -104,3 +104,17 @@ EXPOSE 80
 CMD apachectl -D FOREGROUND
 
 ```
+# Ansible-playbook to install git
+```
+---
+- hosts: 172.31.33.3
+  become: True
+  tasks:
+          - name: Install git
+            yum:
+                    name: git
+                    state: present
+
+...
+
+```
