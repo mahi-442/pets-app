@@ -182,5 +182,34 @@ In apache.yml file write the below code(using vi editor)
 
 
 ```
+# Same above ansible playbook using handlers to restart the apache only when there are changes in index.html file
+```
+- hosts: 172.31.33.3
+  become: True
+  tasks:
+          - name: Install apache
+            yum:
+                    name: httpd
+                    state: present
 
+          - name: start and enable apache
+            service:
+                    name: httpd
+                    state: started
+                    enabled: yes
+
+          - name: Deploy html file on apache
+            copy:
+                    src: index.html
+                    dest: /var/www/html/
+            notify:
+                    - Restart appache
+
+  handlers:
+          - name: Restart appache
+            service:
+                    name: httpd
+                    state: restarted
+
+```
 
