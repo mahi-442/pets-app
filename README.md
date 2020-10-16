@@ -147,5 +147,40 @@ CMD apachectl -D FOREGROUND
 ...
 
 ```
+# Task0 Write a ansible playbook to install apache server on Managed Node and deploy a sample html file on apache server.
+```
+Make sure you are on /home/ec2-user/ansproj(where your custome inventory file is loacted)
+
+In index.html file write the below code(using vi editor)
+
+<h1 style="color: red"> This is deployed using ansible <h1>
+
+In apache.yml file write the below code(using vi editor)
+
+- hosts: 172.31.33.3
+  become: True
+  tasks:
+          - name: Install apache
+            yum:
+                    name: httpd
+                    state: present
+          - name: start and enable apache
+            service:
+                    name: httpd
+                    state: started
+                    enabled: yes
+          - name: Deploy html file on apache
+            copy:
+                    src: index.html
+                    dest: /var/www/html/
+          - name: Restart appache
+            service:
+                    name: httpd
+                    state: restarted
+
+
+
+
+```
 
 
