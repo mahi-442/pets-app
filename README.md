@@ -232,4 +232,56 @@ In apache.yml file write the below code(using vi editor)
 	  	msg: Restarting Tomcat
 
 ```
+# ansible-playbook to deploy docker container on host
+```
+- hosts: webservers[0]
+  become: True
+  tasks:
+          - name: Install Docker
+            yum:
+                    name: docker
+                    state: present
+
+          - name: Start and enable Docker
+            service:
+                    name: docker
+                    state: started
+                    enabled: yes
+
+          - name: Install pip
+            yum:
+                    name: python-pip
+                    state: present
+
+          - name: Install Docker-py module
+            pip:
+                    name: docker-py
+
+          - name: Run docker container
+            docker_container:
+                    name: javahome
+                    image: kammana/nodeapp:v1
+                    state: started
+                    published_ports:
+                            - "8080:8080"
+
+```
+# Ansible inventory file
+```
+[webservers]
+172.31.33.3
+172.31.41.138
+
+[db]
+172.31.38.52
+
+[webdb:children]
+webservers
+db
+
+[webdb:vars]
+ansible_user=ec2-user
+ansible_connection=ssh
+ansible_ssh_private_key_file=~/mahipractice.pem
+```
 
