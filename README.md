@@ -212,4 +212,18 @@ In apache.yml file write the below code(using vi editor)
                     state: restarted
 
 ```
+# ansible-playbook to downoad artifact from nexus and deploy it on tomcatserver
+```
+- hosts: webservers
+  tasks:
+          - name: Download from nexus and deploy to tomcat
+            maven_artifact:
+                    group_id: in.javahome
+                    artifact_id: pets-app
+                    repository_url: 'nexus repository url'
+                    username: admin
+                    password: admin
+                    dest: /opt/tomcat8/webapps/pets-app.war
+
+```
 
