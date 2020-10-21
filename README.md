@@ -215,6 +215,8 @@ In apache.yml file write the below code(using vi editor)
 # ansible-playbook to downoad artifact from nexus and deploy it on tomcatserver
 ```
 - hosts: webservers
+  serial:
+  	- 20%
   tasks:
           - name: Download from nexus and deploy to tomcat
             maven_artifact:
@@ -223,7 +225,11 @@ In apache.yml file write the below code(using vi editor)
                     repository_url: 'nexus repository url'
                     username: admin
                     password: admin
+		    version: 1.0.0
                     dest: /opt/tomcat8/webapps/pets-app.war
+	- name: Restart Tomcat
+	  debug:
+	  	msg: Restarting Tomcat
 
 ```
 
