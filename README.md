@@ -284,4 +284,21 @@ ansible_user=ec2-user
 ansible_connection=ssh
 ansible_ssh_private_key_file=~/mahipractice.pem
 ```
+# Gathering facts example:
+
+'''
+- hosts: all
+  gather_facts: yes
+  tasks:
+          - name: some demo
+            debug:
+                    msg: "do only on specific host"
+            when: ansible_default_ipv4['address']=='172.31.33.3'
+
+          - name: some more demo
+            debug:
+                    msg: "do only on linux machine"
+            when: ansible_os_family=='RedHat'
+
+'''
 
