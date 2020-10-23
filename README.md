@@ -285,8 +285,7 @@ ansible_connection=ssh
 ansible_ssh_private_key_file=~/mahipractice.pem
 ```
 # Gathering facts example:
-
-'''
+```
 - hosts: all
   gather_facts: yes
   tasks:
@@ -299,6 +298,5 @@ ansible_ssh_private_key_file=~/mahipractice.pem
             debug:
                     msg: "do only on linux machine"
             when: ansible_os_family=='RedHat'
-
-'''
+```
 
