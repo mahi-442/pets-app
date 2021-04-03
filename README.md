@@ -2,6 +2,10 @@
 
 [Google docs running notes](https://docs.google.com/document/d/12pLDe3ONtasPd5FL_RJQZAMqDFDVUUVZBtPOdh6D3I0/edit)
 
+# MyNotes:
+
+[Link--->](https://docs.google.com/document/d/1H70_4f8yFWp7HyUW7uch9az_b86jwV2mG9fWHYQQzso/edit)
+
 # pets-app
 [Hari-Sir-Repository](https://github.com/javahometech/pets-app)
 
